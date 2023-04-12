@@ -85,7 +85,7 @@ maketransaction=async(req,res)=>{
 
 },
 gettransaction=async(req,res)=>{
-let transaction=Transaction.find({to:req.params.name}).limit(5)
+let transaction= await Transaction.find({to:req.params.name}).limit(5)
 res.json({transaction:transaction})
 }
    
