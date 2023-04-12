@@ -8,10 +8,15 @@ login=async (req, res) => {
     let user=User.findOne({name:name,mobile:mobile})
     if(user) 
     {
+        console.log("from if");
+
         return res.json({msg:"login success"});
 
+    } else {
+        console.log("from else");
+        return res.json({msg:"user not found"})
+
     }
-    return res.json({msg:"user not found"})
      
 },
     signup = async (req, res) =>{
