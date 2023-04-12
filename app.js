@@ -4,7 +4,7 @@ const user = require('./routes/user')
 let app=express()
 app.use(express.json())
 app.use('/api/user',user)
-mongoose.connect('', {
+mongoose.connect('mongodb+srv://gopalreddy6197:local@cluster0.xxavwoe.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
