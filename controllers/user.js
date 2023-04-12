@@ -7,7 +7,10 @@ login=async (req, res) => {
     let name=req.body.name
     let user=User.findOne({name:name,mobile:mobile})
     if(user) 
-    return res.json({msg:"login success"})
+    {
+        return res.json({msg:"login success"});
+
+    }
     return res.json({msg:"user not found"})
      
 },
