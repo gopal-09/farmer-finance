@@ -5,6 +5,7 @@ let Transaction=require('../models/transaction')
 login=async (req, res) => {
     let mobile=req.body.mobile
     let name=req.body.name
+    try{
     let user=User.findOne({name:name,mobile:mobile})
     if(user) 
     {
@@ -16,6 +17,10 @@ login=async (req, res) => {
         console.log("from else");
         return res.json({msg:"user not found"})
 
+    }
+    }
+    catch(err){
+        console.log(err);
     }
      
 },
